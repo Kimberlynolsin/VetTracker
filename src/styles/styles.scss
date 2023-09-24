@@ -1,6 +1,8 @@
 @import './partials/variables';
 @import './partials/mixins';
 @import './partials/global';
-
-
+//components
+@import '../components/Header/Header.scss';
+//pages
+@import "../pages/Homepage/HomePage.scss";
 

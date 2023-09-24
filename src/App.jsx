@@ -1,9 +1,15 @@
-import './styles/styles.scss'
-function App() {
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import "./styles/styles.scss";
+import HomePage from "./pages/Homepage/HomePage";
+function App() {
   return (
     <>
-      <div> Hello World</div>
+      <Router>
+        <Routes>
+          <Route path= "/"element={<HomePage />} />
+        </Routes>
+      </Router>
     </>
   );
 }
