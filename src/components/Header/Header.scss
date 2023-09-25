@@ -1,0 +1,13 @@
+.header {
+  background-color: $primary;
+  color: $secondary;
+  padding: 1rem 1.6rem;
+  @include desktop {
+    width: 100%;
+    margin: $margin-desktop;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}

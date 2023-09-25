@@ -9,3 +9,13 @@
       @content;
     }
   }
+
+  @mixin button {
+    background-color: $primary;
+    border-style: initial;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }

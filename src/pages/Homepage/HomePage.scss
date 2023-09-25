@@ -1,0 +1,42 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+
+  @include desktop {
+    width: 102rem;
+    padding: $margin-desktop;
+  }
+  &__title {
+    color: $primary;
+    margin-bottom: 0;
+    @include desktop {
+      margin: 2rem 0;
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+  }
+
+  &__btns {
+    display: flex;
+    width: 20rem;
+    justify-content: space-between;
+
+    &__signup {
+      @include button;
+    }
+    &__login {
+      @include button;
+      background-color: $secondary;
+      color: $primary;
+      border: 1px solid $primary;
+    }
+
+    &__text {
+      margin: 0;
+    }
+  }
+}

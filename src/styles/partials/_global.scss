@@ -6,10 +6,46 @@
 
 html {
   font-size: 62.5%;
+
 }
 
 body {
   margin: 0;
   font-size: 1.3rem;
   font-family: "Public Sans", sans-serif;
+}
+h1 {
+  font-size: 2.4rem;
+  @include tablet {
+    font-size: 3.2rem;
+  }
+  @include desktop {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  @include tablet {
+    font-size: 2.4rem;
+  }
+  @include desktop {
+    font-size: 3.2rem;
+  }
+}
+
+p {
+  font-size: 1.6rem;
+  @include tablet {
+    font-size: 1.8rem;
+  }
+}
+section {
+  margin: $margin-mobile;
+  @include tablet {
+    margin: $margin-mobile;
+  }
+  @include desktop {
+    margin: $margin-desktop;
+  }
 }
