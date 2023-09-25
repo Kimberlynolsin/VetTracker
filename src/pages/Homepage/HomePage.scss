@@ -12,7 +12,8 @@
     color: $primary;
     margin-bottom: 0;
     @include desktop {
-margin: 2rem 0 ;      }
+      margin: 2rem 0;
+    }
   }
 
   &__text {
@@ -25,18 +26,17 @@ margin: 2rem 0 ;      }
     justify-content: space-between;
 
     &__signup {
-      background-color: $primary;
-      border-style: initial;
-      border-radius: 5px;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      color: white;
+      @include button;
     }
     &__login {
-      @extend .hero__btns__signup;
+      @include button;
       background-color: $secondary;
       color: $primary;
       border: 1px solid $primary;
+    }
+
+    &__text {
+      margin: 0;
     }
   }
 }

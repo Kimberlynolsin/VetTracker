@@ -1,0 +1,6 @@
+.signup {
+  [type="submit"] {
+    @include button;
+    border-radius: 0;
+  }
+}
