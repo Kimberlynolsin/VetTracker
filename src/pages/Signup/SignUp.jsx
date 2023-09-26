@@ -7,6 +7,7 @@ const SignUp = () => {
       <section className="signup">
         <h1 className="signup__title">Create A New Account</h1>
         <form className="signup__form">
+
           <div className="signup__form__containers">
             <label className="signup__form__labels" htmlFor="name">
               Name:
@@ -28,6 +29,21 @@ const SignUp = () => {
           <div className="signup__form__containers signup__form__containers--btns">
             <button type="submit">Enter</button>
           </div>
+
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input type="password" id="password" name="password" />
+          </div>
+          <button type="submit">Sign Up</button>
+
         </form>
       </section>
     </>

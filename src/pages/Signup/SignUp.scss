@@ -42,5 +42,10 @@
     border-radius: 0;
     margin-top: 4rem;
     width: 10rem;
+
+  [type="submit"] {
+    @include button;
+    border-radius: 0;
+
   }
 }
