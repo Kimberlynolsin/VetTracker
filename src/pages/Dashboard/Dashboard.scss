@@ -1,0 +1,29 @@
+.dashboard {
+  @include desktop {
+    width: 102rem;
+    padding: $margin-desktop;
+  }
+  &__title {
+    color: $primary;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  td,
+  th {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+  }
+  tr:hover {
+    background-color: #ddd;
+  }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $primary;
+    color: white;
+  }
+}
