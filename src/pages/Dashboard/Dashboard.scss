@@ -6,24 +6,35 @@
   &__title {
     color: $primary;
   }
+
   table {
     border-collapse: collapse;
     width: 100%;
-    border: 1px solid #ddd;
+    box-shadow: 8px 8px 8px 1px rgba(221, 221, 221, 1);
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  td {
+    text-align: center;
   }
   td,
   th {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid white;
     padding: 1rem;
   }
   tr:hover {
     background-color: #ddd;
+    color: black;
   }
   th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: $primary;
     color: white;
+  }
+  &__more {
+    width: 2rem;
   }
 }
