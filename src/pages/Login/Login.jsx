@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 
 const Login = () => {
@@ -20,7 +21,9 @@ const Login = () => {
             <input type="password" id="password" name="password" />
           </div>
           <div className="login__form__containers login__form__containers--btns">
-            <button type="submit">Enter</button>
+            <Link to={"/dashboard"}>
+              <button type="submit">Enter</button>
+            </Link>
           </div>
         </form>
       </section>
