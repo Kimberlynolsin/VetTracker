@@ -1,33 +1,17 @@
 import { useState } from "react";
-
 import Header from "../../components/Header/Header";
-import { petList } from "../../content/pet-list";
-import { petDetails } from "../../content/pet-details";
+import { petList } from "../../content";
+import more from "../../assets/icons/more.png";
 
 const Dashboard = () => {
   const [selectedPetInfo, setSelectedPetInfo] = useState(null);
 
-  const selected = (e) => {
-    return (
-      <div>
-        <p>hi</p>
-      </div>
-    );
-    console.log(e.currentTarget);
+  const handleRowClick = (e, id) => {
+    setSelectedPetInfo(id);
   };
 
-  const renderPets = petList.map((e) => {
-    return (
-      <tr key={e.id}>
-        <td>{e.name}</td>
-        <td>{e.type}</td>
-        <td>{e.appointment}</td>
-        <td>
-          <img src={e.icon} onClick={selected} className="dashboard__more" />
-        </td>
-      </tr>
-    );
-  });
+  const selectedPet = petList.find((pet) => pet.id === selectedPetInfo);
+
   return (
     <>
       <Header />
@@ -42,9 +26,44 @@ const Dashboard = () => {
               <th>More</th>
             </tr>
           </thead>
-          <tbody>{renderPets}</tbody>
-          {selectedPetInfo && selected}
+          <tbody>
+            {petList.map((e) => (
+              <tr key={e.id}>
+                <td>{e.name}</td>
+                <td>{e.type}</td>
+                <td>{e.appointment}</td>
+                <td>
+                  <img
+                    src={more}
+                    onClick={(event) => handleRowClick(event, e.id)}
+                    className="dashboard__more"
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
+        <div className="dashboard__pet__info">
+          <h2 className="dashboard__pet__summary">Summary</h2>
+          {selectedPet && (
+            <>
+              <p className="dashboard__pet__text">Name: {selectedPet.name}</p>
+              <p className="dashboard__pet__text">Type: {selectedPet.type}</p>
+              <p className="dashboard__pet__text">
+                Upcoming Checkup: {selectedPet.appointment}
+              </p>
+              <p className="dashboard__pet__text">
+                Last Checkup: {selectedPet.lastAppointment}
+              </p>
+              <p className="dashboard__pet__text">
+                Recent Vaccine: {selectedPet.vaccine}
+              </p>
+              <p className="dashboard__pet__text">
+                Checkup Notes: {selectedPet.note}
+              </p>
+            </>
+          )}
+        </div>
       </section>
     </>
   );
