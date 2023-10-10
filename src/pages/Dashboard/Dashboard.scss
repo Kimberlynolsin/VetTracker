@@ -7,22 +7,22 @@
     color: $primary;
   }
 
-  table {
+  &__container {
     @include card;
     border-collapse: collapse;
     width: 100%;
     background-color: #f7f7f7;
     overflow: hidden;
   }
-  td {
+  &__table {
     text-align: center;
   }
-  td,
-  th {
+  &__table,
+  &__category {
     border-bottom: 1px solid white;
     padding: 1rem;
   }
-  tr:hover {
+  &__row:hover {
     background-color: #ddd;
     color: black;
   }
@@ -37,17 +37,5 @@
     width: 2rem;
   }
 
-  &__pet {
-    &__info {
-      @include card;
-      background-color: $primary;
-      color: white;
-      padding: 2rem;
-      margin: 2rem 0;
-    }
-    &__summary {
-      text-align: center;
-      margin: 0;
-    }
-  }
+ 
 }

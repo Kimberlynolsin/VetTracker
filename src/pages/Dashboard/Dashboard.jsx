@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 import Header from "../../components/Header/Header";
-import { petList } from "../../content";
 import more from "../../assets/icons/more.png";
+import Summary from "../../components/Summary/Summary";
+import { petList } from "../../content";
 
 const Dashboard = () => {
   const [selectedPetInfo, setSelectedPetInfo] = useState(null);
@@ -19,20 +21,20 @@ const Dashboard = () => {
         <h1 className="dashboard__title">Dashboard</h1>
         <table className="dashboard__container">
           <thead>
-            <tr>
-              <th>Pet</th>
-              <th>Type</th>
-              <th>Appointment</th>
-              <th>More</th>
+            <tr className="dashboard__row">
+              <th className="dashboard__category">Pet</th>
+              <th className="dashboard__category">Type</th>
+              <th className="dashboard__category">Appointment</th>
+              <th className="dashboard__category">More</th>
             </tr>
           </thead>
           <tbody>
             {petList.map((e) => (
-              <tr key={e.id}>
-                <td>{e.name}</td>
-                <td>{e.type}</td>
-                <td>{e.appointment}</td>
-                <td>
+              <tr className="dashboard__row" key={e.id}>
+                <td className="dashboard__table">{e.name}</td>
+                <td className="dashboard__table">{e.type}</td>
+                <td className="dashboard__table">{e.appointment}</td>
+                <td className="dashboard__table">
                   <img
                     src={more}
                     onClick={(event) => handleRowClick(event, e.id)}
@@ -43,27 +45,7 @@ const Dashboard = () => {
             ))}
           </tbody>
         </table>
-        <div className="dashboard__pet__info">
-          <h2 className="dashboard__pet__summary">Summary</h2>
-          {selectedPet && (
-            <>
-              <p className="dashboard__pet__text">Name: {selectedPet.name}</p>
-              <p className="dashboard__pet__text">Type: {selectedPet.type}</p>
-              <p className="dashboard__pet__text">
-                Upcoming Checkup: {selectedPet.appointment}
-              </p>
-              <p className="dashboard__pet__text">
-                Last Checkup: {selectedPet.lastAppointment}
-              </p>
-              <p className="dashboard__pet__text">
-                Recent Vaccine: {selectedPet.vaccine}
-              </p>
-              <p className="dashboard__pet__text">
-                Checkup Notes: {selectedPet.note}
-              </p>
-            </>
-          )}
-        </div>
+        <Summary selectedPet={selectedPet} />
       </section>
     </>
   );
