@@ -1,16 +1,25 @@
-.summary{
-&__pet {
-    &__info {
-      // @include card;
-      // background-color: $primary;
-      color: black;
-      padding: 2rem;
-      margin: 2rem 0;
-    }
-    &__summary {
-      text-align: center;
-      margin: 0;
-      color: $primary;
-    }
+.summary {
+  &__title {
+    color: $primary;
+    // text-align: center
+  }
+
+  &__table {
+    @include card;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #f7f7f7;
+    overflow: hidden;
+  }
+  &__details {
+    text-align: left;
+    border-bottom: 1px solid white;
+    padding: 1.2rem;
+  }
+  &__category {
+    padding: 1.2rem;
+    text-align: left;
+    background-color: $primary;
+    color: white;
   }
 }

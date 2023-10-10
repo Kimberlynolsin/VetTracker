@@ -1,34 +1,33 @@
 const Summary = ({ selectedPet }) => {
   return (
-    <section>
-      <h2 className="dashboard__pet__summary">Summary</h2>
+    <section className="summary">
+      <h2 className="summary__title">Summary</h2>
       {selectedPet && (
         <>
-          <table>
+          <table className="summary__table">
             <thead>
-            <tr>
-              <td>Name</td>
-              <td>Type</td>
-              <td>Upcoming Checkup</td>
-              <td>Last Checkup</td>
-              <td>Recent Vaccine</td>
-              <td>Checkup Notes</td>
-            </tr>
+              <tr>
+                <th className="summary__category">Name</th>
+                <th className="summary__category">Type</th>
+                <th className="summary__category">Upcoming Checkup</th>
+                <th className="summary__category">Last Checkup</th>
+                <th className="summary__category">Recent Vaccine</th>
+                <th className="summary__category">Checkup Notes</th>
+              </tr>
             </thead>
+            <tbody>
+              <tr>
+                <td className="summary__details">{selectedPet.name}</td>
+                <td className="summary__details">{selectedPet.type}</td>
+                <td className="summary__details">{selectedPet.appointment}</td>
+                <td className="summary__details"> {selectedPet.lastAppointment}</td>
+                <td className="summary__details">{selectedPet.vaccine}</td>
+                <td className="summary__details">{selectedPet.note}</td>
+              </tr>
+            </tbody>
           </table>
         </>
       )}
-      
-      {/* <p className="summary__text">Name: {selectedPet.name}</p>
-      <p className="summary__text">Type: {selectedPet.type}</p>
-      <p className="summary__text">
-        Upcoming Checkup: {selectedPet.appointment}
-      </p>
-      <p className="summary__text">
-        Last Checkup: {selectedPet.lastAppointment}
-      </p>
-      <p className="summary__text">Recent Vaccine: {selectedPet.vaccine}</p>
-      <p className="summary__text">Checkup Notes: {selectedPet.note}</p>  */}
     </section>
   );
 };

@@ -26,9 +26,8 @@
     background-color: #ddd;
     color: black;
   }
-  th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+  &__category {
+    padding: 1.2rem;
     text-align: center;
     background-color: $primary;
     color: white;
@@ -36,6 +35,4 @@
   &__more {
     width: 2rem;
   }
-
- 
 }
