@@ -2,6 +2,10 @@
   margin: 0;
   &__title {
     color: $primary;
+
+  &__title {
+    color: $primary;
+
   }
 
   &__table {
@@ -11,6 +15,7 @@
     background-color: #f7f7f7;
     overflow: hidden;
   }
+
   &__container {
     @include card;
     background-color: #7473da ;
