@@ -4,28 +4,31 @@ const Summary = ({ selectedPet }) => {
       <h2 className="summary__title">Summary</h2>
       {selectedPet && (
         <>
-          <table className="summary__table">
-            <thead>
-              <tr>
-                <th className="summary__category">Name</th>
-                <th className="summary__category">Type</th>
-                <th className="summary__category">Upcoming Checkup</th>
-                <th className="summary__category">Last Checkup</th>
-                <th className="summary__category">Recent Vaccine</th>
-                <th className="summary__category">Checkup Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="summary__details">{selectedPet.name}</td>
-                <td className="summary__details">{selectedPet.type}</td>
-                <td className="summary__details">{selectedPet.appointment}</td>
-                <td className="summary__details"> {selectedPet.lastAppointment}</td>
-                <td className="summary__details">{selectedPet.vaccine}</td>
-                <td className="summary__details">{selectedPet.note}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="summary__container summary__container--name">
+            <h3 className="summary__subtitle"> {selectedPet.name}</h3>
+            <div className="summary__details">
+              <p className="summary__text">{selectedPet.type}</p>
+            </div>
+          </div>
+          <div className="summary__container summary__container--vaccine">
+            <h3 className="summary__subtitle"> Vaccine History</h3>
+            <div className="summary__details">
+              <p className="summary__text">{selectedPet.vaccine}</p>
+            </div>
+          </div>
+          <div className="summary__container summary__container--appointment">
+            <h3 className="summary__subtitle"> Appointments</h3>
+            <div className="summary__details">
+              <p className="summary__text"><strong>Next: </strong>{selectedPet.appointment}</p>
+              <p className="summary__text"><strong>Last: </strong> {selectedPet.lastAppointment}</p>
+            </div>
+          </div>
+          <div className="summary__container summary__container--notes">
+            <h3 className="summary__subtitle">Notes</h3>
+            <div className="summary__details">
+              <p className="summary__text">{selectedPet.note}</p>
+            </div>
+          </div>
         </>
       )}
     </section>
