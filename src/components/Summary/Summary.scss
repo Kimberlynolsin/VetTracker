@@ -1,7 +1,7 @@
 .summary {
+  margin: 0;
   &__title {
     color: $primary;
-    // text-align: center
   }
 
   &__table {
@@ -11,10 +11,31 @@
     background-color: #f7f7f7;
     overflow: hidden;
   }
+  &__container {
+    @include card;
+    background-color: #7473da ;
+    padding: 1rem;
+    margin: 1rem 0;
+    &--vaccine{
+      background-color: #da7471;
+    }
+    &--appointment{
+      background-color: #da9e74 ;
+    }
+    &--notes{
+      background-color: #74d7a7  ;
+    }
+  }
+  &__subtitle {
+    color: $secondary;
+    margin: 0 0 1rem 0;
+  }
   &__details {
-    text-align: left;
-    border-bottom: 1px solid white;
-    padding: 1.2rem;
+  }
+  &__text {
+    margin: 0;
+    color: $secondary;
+
   }
   &__category {
     padding: 1.2rem;
