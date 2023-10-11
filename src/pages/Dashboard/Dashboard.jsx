@@ -1,9 +1,11 @@
 import { useState } from "react";
-
 import Header from "../../components/Header/Header";
+
 import more from "../../assets/icons/more.png";
 import Summary from "../../components/Summary/Summary";
 import { petList } from "../../content";
+
+
 
 const Dashboard = () => {
   const [selectedPetInfo, setSelectedPetInfo] = useState(null);
@@ -30,6 +32,7 @@ const Dashboard = () => {
           </thead>
           <tbody>
             {petList.map((e) => (
+
               <tr className="dashboard__row" key={e.id}>
                 <td className="dashboard__table">{e.name}</td>
                 <td className="dashboard__table">{e.type}</td>
@@ -45,7 +48,10 @@ const Dashboard = () => {
             ))}
           </tbody>
         </table>
+
         <Summary selectedPet={selectedPet} />
+
+
       </section>
     </>
   );

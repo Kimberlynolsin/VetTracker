@@ -7,7 +7,10 @@
     color: $primary;
   }
 
+
   &__container {
+
+
     @include card;
     border-collapse: collapse;
     width: 100%;
@@ -34,5 +37,19 @@
   }
   &__more {
     width: 2rem;
+  }
+
+  &__pet {
+    &__info {
+      @include card;
+      background-color: $primary;
+      color: white;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    &__summary {
+      text-align: center;
+      margin: 0;
+    }
   }
 }
