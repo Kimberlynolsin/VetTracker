@@ -2,10 +2,6 @@
   margin: 0;
   &__title {
     color: $primary;
-
-  &__title {
-    color: $primary;
-
   }
 
   &__table {
@@ -18,29 +14,32 @@
 
   &__container {
     @include card;
-    background-color: #7473da ;
+    background-color: #7473da;
     padding: 1rem;
     margin: 1rem 0;
-    &--vaccine{
+    &--vaccine {
       background-color: #da7471;
     }
-    &--appointment{
-      background-color: #da9e74 ;
+    &--appointment {
+      background-color: #da9e74;
     }
-    &--notes{
-      background-color: #74d7a7  ;
+    &--notes {
+      background-color: #74d7a7;
     }
   }
   &__subtitle {
     color: $secondary;
     margin: 0 0 1rem 0;
   }
-  &__details {
-  }
-  &__text {
-    margin: 0;
-    color: $secondary;
+&__date,
+&__type{
+  color: white;
+}
 
+
+  &__text {
+    margin: 0 0 .2rem 0;
+    color: $secondary;
   }
   &__category {
     padding: 1.2rem;
